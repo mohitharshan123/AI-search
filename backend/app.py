@@ -11,7 +11,7 @@ from flask import request
 # Constants
 BASE_DIR = os.path.abspath(os.path.dirname(__file__))
 DATABASE_URI = f'sqlite:///{os.path.join(BASE_DIR, "chinook.db")}'
-SQL_MODEL = 'ai-search'
+SQL_MODEL = ''
 VANNA_API_KEY = ''
 VANNA_DB_PATH = 'chinook.db'
 
