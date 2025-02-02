@@ -1,0 +1,84 @@
+.App {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 30px;
+  background-color: #f4f4f9;
+  width: 100vw;
+  margin: 0;
+}
+
+h1 {
+  font-size: 36px;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.search-form {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+input {
+  padding: 12px;
+  font-size: 16px;
+  margin-right: 10px;
+  width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+}
+
+input:focus {
+  border-color: #4caf50;
+}
+
+button {
+  padding: 12px 18px;
+  font-size: 16px;
+  border: none;
+  background-color: #4caf50;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+.loading-text {
+  font-size: 18px;
+  color: #333;
+}
+
+.track-list {
+  margin-top: 30px;
+  text-align: left;
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.track-list ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.track-item {
+  background-color: white;
+  padding: 20px;
+  margin: 15px 0;
+  border-radius: 8px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.track-item p {
+  font-size: 16px;
+  color: #555;
+  margin: 5px 0;
+}
+
+.track-info strong {
+  font-size: 18px;
+  color: #333;
+}
