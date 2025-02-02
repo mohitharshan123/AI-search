@@ -85,12 +85,6 @@ def query_and_get_df(data, query, model_class, query_type):
     result_data = result_df.to_dict(orient='records')
     return result_data
 
-
-@app.route('/api/artists', methods=['GET'])
-def get_artists():
-    result_artists = query_and_get_df(QUERY_ARTISTS, Artist, "artists")
-    return jsonify(result_artists)
-
 @app.route('/api/tracks', methods=['GET'])
 def get_tracks():
     data = Track.query.all()
