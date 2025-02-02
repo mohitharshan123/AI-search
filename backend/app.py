@@ -12,8 +12,7 @@ from flask import request
 BASE_DIR = os.path.abspath(os.path.dirname(__file__))
 DATABASE_URI = f'sqlite:///{os.path.join(BASE_DIR, "chinook.db")}'
 SQL_MODEL = 'ai-search'
-VANNA_API_KEY = '388db782463249259d0b6d4cc51e86cf'
-VANNA_DB_PATH = 'chinook.db'
+VANNA_API_KEY = ''
 QUERY_ARTISTS = "All artists with name Banda Black Rio"  # Example for artists
 QUERY_TRACKS = "All tracks with name Fast As a Shark"  # Example for tracks
 QUERY_EMPLOYEES = "All employees in the Sales department"  # Example for employees
@@ -113,22 +112,6 @@ def get_tracks():
         return jsonify(tracks_data)
     result_tracks = query_and_get_df(data, f"All tracks with {query}", Track, "tracks")
     return jsonify(result_tracks)
-
-@app.route('/api/albums', methods=['GET'])
-def get_albums():
-    albums = Album.query.all()
-    result_albums = [{"AlbumId": album.AlbumId, "Title": album.Title, "ArtistId": album.ArtistId} for album in albums]
-    return jsonify(result_albums)
-
-@app.route('/api/artists/<int:artist_id>/albums', methods=['GET'])
-def get_albums_by_artist(artist_id):
-    albums = Album.query.filter_by(ArtistId=artist_id).all()
-    return jsonify([{"AlbumId": album.AlbumId, "Title": album.Title} for album in albums])
-
-@app.route('/api/albums/<int:album_id>/tracks', methods=['GET'])
-def get_tracks_by_album(album_id):
-    tracks = Track.query.filter_by(AlbumId=album_id).all()
-    return jsonify([{"TrackId": track.TrackId, "Name": track.Name} for track in tracks])
 
 if __name__ == '__main__':
     app.run(debug=True)
